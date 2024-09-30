@@ -3,7 +3,7 @@ import card
 
 def main():
     crd = card.generate_card()
-    print(crd.basic_info)
+    print(crd)
 
 
 if __name__ == "__main__":
