@@ -131,6 +131,8 @@ def generate_power_toughness(card: Card) -> Card:
 {str(card)}
   
 Respond either with the power and toughness in the form of "6 / 5" or "(not applicable)". Don't include the quotes in your response.
+
+Your response must contain only the power and toughness of the card, or the text "(not applicable)". Don't include anything else.
  """
     power_and_toughness = LLM_API.response_from_prompt(prompt)
     return card.copy_and_update(power_and_toughness=power_and_toughness)
