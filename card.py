@@ -25,6 +25,18 @@ class Card:
             f"POWER AND TOUGHNESS: {self.power_and_toughness or "(Not decided yet)"}\n"
         )
 
+    @property
+    def basic_info(self) -> str:
+        """Card info without the concept"""
+        return (
+            f"NAME: {self.name or "(Not decided yet)"}\n"
+            f"MANA COST: {self.mana_cost or "(Not decided yet)"}\n"
+            f"CARD TYPE: {self.card_type or "(Not decided yet)"}\n"
+            f"TEXT: {self.text or "(Not decided yet)"}\n"
+            f"FLAVOR TEXT: {self.flavor_text or "(Not decided yet)"}\n"
+            f"POWER AND TOUGHNESS: {self.power_and_toughness or "(Not decided yet)"}\n"
+        )
+
     def copy_and_update(self, **kwargs) -> "Card":
         self_copy = copy.deepcopy(self)
 
@@ -132,4 +144,4 @@ def generate_card() -> Card:
     crd = generate_text(crd)
     crd = generate_power_toughness(crd)
     crd = generate_flavor_text(crd)
-    print(f"\n{crd}\n----------------")
+    return crd

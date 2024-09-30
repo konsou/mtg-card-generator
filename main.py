@@ -2,7 +2,8 @@ import card
 
 
 def main():
-    card.generate_card()
+    crd = card.generate_card()
+    print(crd.basic_info)
 
 
 if __name__ == "__main__":
